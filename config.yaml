@@ -1,0 +1,70 @@
+# OCR Platform Configuration
+
+ocr:
+  engines:
+    tesseract:
+      enabled: true
+      languages: "eng+fra+deu+spa+ara+hin+chi_sim+jpn+kor"
+      psm: 6  # Page segmentation mode
+      oem: 3  # OCR Engine mode
+    
+    paddleocr:
+      enabled: true
+      use_angle_cls: true
+      lang: "en"  # Can be changed to "hi" for Hindi, or auto-detected
+      use_gpu: false
+      # Supported languages: en, ch, ko, ja, hi, te, ta, kn, ml, or, gu, pa, bn
+    
+    easyocr:
+      enabled: true
+      languages: ["en", "hi", "ar", "zh", "ja", "ko", "fr", "de", "es"]
+      gpu: false
+
+  preprocessing:
+    deskew: true
+    denoise: true
+    contrast_enhancement: true
+    binarization: true
+    resize_max_dim: 3000
+
+  fusion:
+    method: "confidence_weighted"  # confidence_weighted, voting, edit_distance
+    min_confidence: 0.5
+    edit_distance_threshold: 0.8
+
+  text_detection:
+    use_dl_detector: true
+    detector_model: "craft"  # craft or dbnet
+    confidence_threshold: 0.7
+
+language_detection:
+  enabled: true
+  fallback_language: "en"
+  min_confidence: 0.3
+  # Supported languages: en, hi, ar, zh, ja, ko, fr, de, es, ru, th, vi
+  # Hindi (hi) is fully supported with all three OCR engines
+
+verification:
+  field_matching:
+    similarity_threshold: 0.85
+    use_fuzzy_matching: true
+    case_sensitive: false
+    ignore_whitespace: true
+  
+  confidence_scoring:
+    ocr_confidence_weight: 0.4
+    similarity_weight: 0.4
+    field_completeness_weight: 0.2
+
+api:
+  host: "0.0.0.0"
+  port: 5000
+  debug: false
+  max_file_size: 50  # MB
+  allowed_extensions: ["pdf", "png", "jpg", "jpeg", "tiff", "bmp"]
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+
