@@ -1,0 +1,75 @@
+.app-header {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    height: 70px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-color);
+}
+
+.logo-icon {
+    color: var(--accent-color);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.logo-subtitle {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+.main-nav {
+    height: 100%;
+}
+
+.nav-list {
+    display: flex;
+    gap: 0.5rem;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-link {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+    border-radius: var(--radius-md);
+    transition: color var(--transition-fast);
+    position: relative;
+    display: block;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+.nav-link.active {
+    color: var(--accent-color);
+    background-color: rgba(0, 123, 255, 0.1);
+}
