@@ -1,18 +1,21 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ShieldCheck } from 'lucide-react';
+import { Building2, CheckCircle2 } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
     const navLinks = [
-        { label: "Home", route: "/" },
-        { label: "Upload Documents", route: "/upload" },
-        { label: "Forms", route: "/forms" },
-        { label: "Validation", route: "/validation" },
-        { label: "Wallet", route: "/wallet" },
-        { label: "ITR Filing", route: "/itr" }
+        { label: "How It Works", anchor: "#how-it-works" },
+        { label: "Verify Document", anchor: "#verification" },
+        { label: "About", anchor: "#about" }
     ];
+
+    const scrollToSection = (anchor) => {
+        const element = document.querySelector(anchor);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
 
     return (
         <motion.header
@@ -23,30 +26,39 @@ const Header = () => {
         >
             <div className="container header-container">
                 <div className="logo-section">
-                    <ShieldCheck size={32} className="logo-icon" />
+                    <Building2 size={32} className="logo-icon" />
                     <div className="logo-text">
-                        <span>Government of India</span>
-                        <span className="logo-subtitle">ITR Filing Portal</span>
+                        <span>DocVerify</span>
+                        <span className="logo-subtitle">Government Portal</span>
                     </div>
                 </div>
 
                 <nav className="main-nav">
                     <ul className="nav-list">
                         {navLinks.map((link) => (
-                            <li key={link.route}>
-                                <NavLink
-                                    to={link.route}
-                                    className={({ isActive }) =>
-                                        `nav-link ${isActive ? 'active' : ''}`
-                                    }
+                            <li key={link.anchor}>
+                                <a
+                                    href={link.anchor}
+                                    className="nav-link"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        scrollToSection(link.anchor);
+                                    }}
                                 >
                                     {link.label}
-                                    <motion.div className="nav-indicator" layoutId="navIndicator" />
-                                </NavLink>
+                                </a>
                             </li>
                         ))}
                     </ul>
                 </nav>
+
+                <button 
+                    className="verify-now-button"
+                    onClick={() => scrollToSection('#verification')}
+                >
+                    <CheckCircle2 size={18} />
+                    Verify Now
+                </button>
             </div>
         </motion.header>
     );

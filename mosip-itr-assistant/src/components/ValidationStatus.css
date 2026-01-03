@@ -13,13 +13,13 @@
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 8px solid;
+    border: 8px solid var(--accent-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-md);
-    background: #fff;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
+    background: linear-gradient(135deg, white 0%, var(--green-light) 100%);
 }
 
 .score-value {

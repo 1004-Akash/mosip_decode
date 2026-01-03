@@ -26,7 +26,7 @@
 .form-input:focus {
     outline: none;
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
 }
 
 .form-input:read-only {

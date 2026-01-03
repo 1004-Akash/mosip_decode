@@ -9,13 +9,15 @@
 .icon-badge {
     width: 64px;
     height: 64px;
-    background-color: #e6f0ff;
+    background: linear-gradient(135deg, var(--green-light) 0%, white 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--accent-color);
     margin-bottom: 1rem;
+    border: 2px solid var(--green-border);
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.15);
 }
 
 .qr-database-grid {
@@ -72,8 +74,9 @@
 }
 
 .status-badge.verified {
-    background: #d1fae5;
-    color: #065f46;
+    background: var(--green-light);
+    color: var(--accent-dark);
+    border: 1px solid var(--green-border);
 }
 
 .status-badge.unverified {
@@ -86,8 +89,9 @@
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 600;
-    background: #dbeafe;
-    color: #1e40af;
+    background: var(--green-light);
+    color: var(--accent-dark);
+    border: 1px solid var(--green-border);
 }
 
 .qr-title {

@@ -35,10 +35,11 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    color: #28a745;
+    color: var(--accent-dark);
     font-weight: 600;
     padding: 0.75rem;
-    background: #e6f9ec;
+    background: var(--green-light);
+    border: 1px solid var(--green-border);
     border-radius: var(--radius-md);
     width: 100%;
 }

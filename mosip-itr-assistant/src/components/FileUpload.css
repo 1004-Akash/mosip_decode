@@ -28,7 +28,8 @@
 .drop-zone:hover,
 .drop-zone.active {
     border-color: var(--accent-color);
-    background-color: #f0f7ff;
+    background-color: var(--green-light);
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
 }
 
 .file-input {
@@ -46,12 +47,13 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background-color: white;
+    background: linear-gradient(135deg, var(--green-light) 0%, white 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--accent-color);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.15);
+    border: 2px solid var(--green-border);
     margin-bottom: 0.5rem;
 }
 
@@ -91,11 +93,12 @@
     width: 40px;
     height: 40px;
     border-radius: 8px;
-    background-color: #e6f0ff;
+    background-color: var(--green-light);
     color: var(--accent-color);
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid var(--green-border);
 }
 
 .file-details {
@@ -125,9 +128,9 @@
 
 .progress-bar {
     height: 100%;
-    background-color: #28a745;
-    /* Success Green */
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
     border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(34, 197, 94, 0.3);
 }
 
 .file-actions {
@@ -136,5 +139,6 @@
 }
 
 .text-success {
-    color: #28a745;
+    color: var(--accent-color);
+    font-weight: 600;
 }

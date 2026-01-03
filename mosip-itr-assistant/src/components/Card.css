@@ -4,12 +4,14 @@
     padding: 1.5rem;
     box-shadow: var(--shadow-md);
     margin-bottom: 1.5rem;
-    transition: box-shadow var(--transition-normal);
-    border: 1px solid var(--border-color);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--green-border);
 }
 
 .card:hover {
     box-shadow: var(--shadow-lg);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
 }
 
 .card-header {

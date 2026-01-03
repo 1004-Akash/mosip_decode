@@ -1,18 +1,19 @@
 .app-header {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--accent-dark);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(34, 197, 94, 0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow-sm);
-    height: 70px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: 80px;
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
+    gap: 2rem;
     height: 100%;
 }
 
@@ -24,25 +25,37 @@
 }
 
 .logo-icon {
-    color: var(--accent-color);
+    color: white;
+    width: 32px;
+    height: 32px;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.1;
-    font-weight: 600;
-    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: white;
+}
+
+.logo-text span:first-child {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
 }
 
 .logo-subtitle {
     font-size: 0.75rem;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 400;
 }
 
 .main-nav {
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-list {
@@ -50,26 +63,51 @@
     gap: 0.5rem;
     height: 100%;
     align-items: center;
+    justify-content: center;
 }
 
 .nav-link {
     padding: 0.5rem 0.8rem;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.9);
     border-radius: var(--radius-md);
-    transition: color var(--transition-fast);
+    transition: all var(--transition-fast);
     position: relative;
     display: block;
     text-decoration: none;
 }
 
 .nav-link:hover {
-    color: var(--accent-color);
-    background-color: rgba(0, 123, 255, 0.05);
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .nav-link.active {
-    color: var(--accent-color);
-    background-color: rgba(0, 123, 255, 0.1);
+    color: white;
+    background-color: rgba(255, 255, 255, 0.15);
+    font-weight: 600;
+}
+
+.verify-now-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+    white-space: nowrap;
+}
+
+.verify-now-button:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+    transform: translateY(-1px);
 }
